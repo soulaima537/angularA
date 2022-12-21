@@ -1,0 +1,32 @@
+<h2>add-product works!</h2>
+
+<form action="" #addForm="ngForm" (ngSubmit)="save(addForm)">
+    <label for="title">title</label>
+    <input type="text" name="title" id="title" ngModel required minlength="4" #title="ngModel">
+
+    <br>
+  
+    <span  *ngIf="title.invalid && title.touched && title.errors?.['required']"
+     style="color: red">title is required</span><br>
+
+    <span  *ngIf="title.invalid && title.touched && title.errors?.['minlength']" 
+    style="color: red">title needs at least 4 caracters</span><br>
+ 
+    <label for="priice">price</label>
+    <input type="text" name="price" id="price"  [(ngModel)]="product.price">
+    <br>
+    <br>
+    <br>
+
+    <label for="qt">Quantity</label>
+    <input type="text" name="qt" id="qt"  [(ngModel)]="product.quantity">
+    <br>
+
+
+    <input type="submit" value="Add">
+
+
+
+
+
+</form>
